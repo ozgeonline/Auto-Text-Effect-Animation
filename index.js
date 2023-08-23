@@ -1,4 +1,6 @@
 const containerEl = document.querySelector(".container");
+const speedEl = document.getElementById('speed')
+let speed = 300 / speedEl.value
 const careers = ["Web Developer","Freelancer","Instructor"];
 
 let careersIndex = 0;
@@ -19,6 +21,7 @@ function updateText(){
     careersIndex = 0;
   }
 
-  setTimeout(updateText, 300);
+  setTimeout(updateText, speed);
 }
 
+speedEl.addEventListener('input', (e) => speed = 300 / e.target.value)
